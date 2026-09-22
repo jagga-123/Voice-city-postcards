@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=1200&auto=format&fit=crop" alt="Vice City Postcards Preview" width="100%" />
+  <img src="assets/hero.svg" alt="Vice City Postcards Preview" width="100%" />
 
   <h1>🌴 Vice City Postcards 🏎️</h1>
   

@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-label="Vice City Postcards — retro neon skyline banner">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="45%" stop-color="#3b0764"/>
+      <stop offset="78%" stop-color="#a21caf"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="35%" stop-color="#fb923c"/>
+      <stop offset="70%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#a21caf"/>
+    </linearGradient>
+    <linearGradient id="grid-fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.05"/>
+    </linearGradient>
+    <clipPath id="frame">
+      <rect x="0" y="0" width="1200" height="400"/>
+    </clipPath>
+    <path id="palm-trunk" d="M-5,0 C-8,-34 -4,-68 4,-94 C6,-99 9,-103 12,-108 L19,-106 C16,-101 13,-96 11,-91 C5,-65 1,-32 5,0 Z"/>
+    <path id="palm-frond" d="M0,-3.5 C20,-15 42,-15 60,-5 C42,0 20,2.5 0,3.5 Z"/>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <!-- sky -->
+    <rect x="0" y="0" width="1200" height="400" fill="url(#sky)"/>
+
+    <!-- stars -->
+    <g fill="#f8fafc">
+      <circle cx="80" cy="40" r="1.6" opacity="0.9"/>
+      <circle cx="180" cy="90" r="1.2" opacity="0.7"/>
+      <circle cx="260" cy="35" r="1.6" opacity="0.8"/>
+      <circle cx="340" cy="70" r="1.1" opacity="0.6"/>
+      <circle cx="420" cy="30" r="1.4" opacity="0.85"/>
+      <circle cx="150" cy="140" r="1.1" opacity="0.5"/>
+      <circle cx="780" cy="45" r="1.5" opacity="0.85"/>
+      <circle cx="860" cy="95" r="1.1" opacity="0.6"/>
+      <circle cx="940" cy="30" r="1.6" opacity="0.9"/>
+      <circle cx="1020" cy="75" r="1.2" opacity="0.65"/>
+      <circle cx="1100" cy="40" r="1.4" opacity="0.8"/>
+      <circle cx="1150" cy="110" r="1.1" opacity="0.55"/>
+      <circle cx="60" cy="180" r="1" opacity="0.4"/>
+      <circle cx="1140" cy="170" r="1" opacity="0.4"/>
+    </g>
+
+    <!-- sun with retro scanline cutouts -->
+    <g>
+      <circle cx="600" cy="235" r="105" fill="url(#sun)"/>
+      <g fill="url(#sky)">
+        <rect x="480" y="248" width="240" height="6"/>
+        <rect x="480" y="262" width="240" height="8"/>
+        <rect x="480" y="278" width="240" height="10"/>
+        <rect x="480" y="296" width="240" height="12"/>
+        <rect x="480" y="316" width="240" height="14"/>
+      </g>
+    </g>
+
+    <!-- distant skyline silhouette sitting on the horizon -->
+    <g fill="#0b0414">
+      <rect x="0"   y="248" width="34" height="90"/>
+      <rect x="40"  y="228" width="26" height="110"/>
+      <rect x="72"  y="258" width="30" height="80"/>
+      <rect x="108" y="238" width="22" height="100"/>
+      <rect x="140" y="252" width="34" height="86"/>
+      <rect x="960" y="244" width="30" height="94"/>
+      <rect x="996" y="222" width="24" height="116"/>
+      <rect x="1026" y="256" width="32" height="82"/>
+      <rect x="1064" y="234" width="22" height="104"/>
+      <rect x="1092" y="250" width="30" height="88"/>
+      <rect x="1128" y="264" width="26" height="74"/>
+      <rect x="1160" y="240" width="20" height="98"/>
+    </g>
+    <!-- neon window lights -->
+    <g fill="#5eead4">
+      <rect x="8" y="262" width="4" height="4"/>
+      <rect x="18" y="278" width="4" height="4"/>
+      <rect x="50" y="248" width="4" height="4"/>
+      <rect x="118" y="256" width="4" height="4"/>
+    </g>
+    <g fill="#f9a8d4">
+      <rect x="80" y="272" width="4" height="4"/>
+      <rect x="150" y="266" width="4" height="4"/>
+      <rect x="1006" y="244" width="4" height="4"/>
+      <rect x="1072" y="252" width="4" height="4"/>
+      <rect x="1136" y="280" width="4" height="4"/>
+    </g>
+
+    <!-- horizon glow line -->
+    <rect x="0" y="336" width="1200" height="2.5" fill="#22d3ee" opacity="0.85"/>
+
+    <!-- perspective grid floor -->
+    <g stroke="url(#grid-fade)" stroke-width="1.5" fill="none">
+      <line x1="0"    y1="400" x2="600" y2="338"/>
+      <line x1="100"  y1="400" x2="595" y2="338"/>
+      <line x1="220"  y1="400" x2="590" y2="338"/>
+      <line x1="360"  y1="400" x2="583" y2="338"/>
+      <line x1="480"  y1="400" x2="578" y2="338"/>
+      <line x1="600"  y1="400" x2="600" y2="338"/>
+      <line x1="720"  y1="400" x2="622" y2="338"/>
+      <line x1="840"  y1="400" x2="617" y2="338"/>
+      <line x1="980"  y1="400" x2="610" y2="338"/>
+      <line x1="1100" y1="400" x2="605" y2="338"/>
+      <line x1="1200" y1="400" x2="600" y2="338"/>
+    </g>
+    <g stroke="url(#grid-fade)" stroke-width="1.2" fill="none">
+      <line x1="0" y1="338" x2="1200" y2="338"/>
+      <line x1="60" y1="352" x2="1140" y2="352"/>
+      <line x1="20" y1="368" x2="1180" y2="368"/>
+      <line x1="-40" y1="388" x2="1240" y2="388"/>
+    </g>
+
+    <g fill="#0b0414">
+      <!-- left cluster -->
+      <g transform="translate(46,400) scale(0.82)">
+        <use xlink:href="#palm-trunk"/>
+        <g transform="translate(12,-108)">
+          <use xlink:href="#palm-frond" transform="rotate(-100)"/>
+          <use xlink:href="#palm-frond" transform="rotate(-62)"/>
+          <use xlink:href="#palm-frond" transform="rotate(-26)"/>
+          <use xlink:href="#palm-frond" transform="rotate(12)"/>
+          <use xlink:href="#palm-frond" transform="rotate(50)"/>
+          <use xlink:href="#palm-frond" transform="rotate(88)"/>
+          <use xlink:href="#palm-frond" transform="rotate(126) scale(0.75)"/>
+        </g>
+      </g>
+      <g transform="translate(122,400) scale(1.05)">
+        <use xlink:href="#palm-trunk"/>
+        <g transform="translate(12,-108)">
+          <use xlink:href="#palm-frond" transform="rotate(-96)"/>
+          <use xlink:href="#palm-frond" transform="rotate(-58)"/>
+          <use xlink:href="#palm-frond" transform="rotate(-20)"/>
+          <use xlink:href="#palm-frond" transform="rotate(16)"/>
+          <use xlink:href="#palm-frond" transform="rotate(54)"/>
+          <use xlink:href="#palm-frond" transform="rotate(92)"/>
+          <use xlink:href="#palm-frond" transform="rotate(130) scale(0.75)"/>
+        </g>
+      </g>
+
+      <!-- right cluster -->
+      <g transform="translate(1154,400) scale(-0.82,0.82)">
+        <use xlink:href="#palm-trunk"/>
+        <g transform="translate(12,-108)">
+          <use xlink:href="#palm-frond" transform="rotate(-100)"/>
+          <use xlink:href="#palm-frond" transform="rotate(-62)"/>
+          <use xlink:href="#palm-frond" transform="rotate(-26)"/>
+          <use xlink:href="#palm-frond" transform="rotate(12)"/>
+          <use xlink:href="#palm-frond" transform="rotate(50)"/>
+          <use xlink:href="#palm-frond" transform="rotate(88)"/>
+          <use xlink:href="#palm-frond" transform="rotate(126) scale(0.75)"/>
+        </g>
+      </g>
+      <g transform="translate(1078,400) scale(-1.05,1.05)">
+        <use xlink:href="#palm-trunk"/>
+        <g transform="translate(12,-108)">
+          <use xlink:href="#palm-frond" transform="rotate(-96)"/>
+          <use xlink:href="#palm-frond" transform="rotate(-58)"/>
+          <use xlink:href="#palm-frond" transform="rotate(-20)"/>
+          <use xlink:href="#palm-frond" transform="rotate(16)"/>
+          <use xlink:href="#palm-frond" transform="rotate(54)"/>
+          <use xlink:href="#palm-frond" transform="rotate(92)"/>
+          <use xlink:href="#palm-frond" transform="rotate(130) scale(0.75)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
