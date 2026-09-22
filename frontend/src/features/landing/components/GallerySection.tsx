@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const mockups = [
   {
-    url: 'https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=800&auto=format&fit=crop',
+    url: 'https://images.unsplash.com/photo-1771850081567-22d494c9aca8?q=80&w=800&auto=format&fit=crop',
     title: 'Neon Nights'
   },
   {

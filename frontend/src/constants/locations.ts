@@ -22,7 +22,7 @@ export const LOCATIONS: Location[] = [
     name: 'Neon District',
     category: 'Nightlife',
     description: 'Bright lights, music, and endless entertainment. The heart of Vice City\'s underground culture.',
-    image: 'https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1771850081567-22d494c9aca8?q=80&w=800&auto=format&fit=crop',
     highlights: ['Cyberpunk aesthetic', 'Pulsing nightclubs', 'Street racing scene', 'Neon signage']
   },
   {

@@ -37,9 +37,15 @@
 
 | Landing Page | Explore Locations |
 | :---: | :---: |
-| *(Add your screenshot here)* | *(Add your screenshot here)* |
-| **Editor Studio** | **Gallery & Achievements** |
-| *(Add your screenshot here)* | *(Add your screenshot here)* |
+| ![Landing page hero](assets/screenshots/hero.png) | ![Explore locations grid](assets/screenshots/explore.png) |
+
+| Editor Studio | Export Success |
+| :---: | :---: |
+| ![Vice Studio image editor](assets/screenshots/editor.png) | ![Postcard export result](assets/screenshots/export.png) |
+
+**Gallery & Achievements**
+
+![Gallery and achievements collection](assets/screenshots/gallery.png)
 
 ---
 

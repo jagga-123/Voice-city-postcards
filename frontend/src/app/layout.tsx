@@ -8,6 +8,7 @@ import { Footer } from '@/components/layout/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://vice-city-postcards.vercel.app'),
   title: 'Vice City Postcards | Build Your GTA Adventure',
   description: 'An immersive AAA-inspired web experience. Explore iconic locations and create customizable retro postcards using a powerful React Image Editor.',
   keywords: ['Vice City', 'GTA VI', 'Postcards', 'React Image Editor', 'Next.js 15', 'Hackathon'],
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     siteName: 'Vice City Postcards',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=1200&auto=format&fit=crop',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Vice City Postcards Preview',
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Vice City Postcards | Build Your GTA Adventure',
     description: 'Explore neon-drenched locations, generate custom postcards, and dive into a full-fledged image editing studio.',
-    images: ['https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=1200&auto=format&fit=crop'],
+    images: ['/og-image.png'],
   },
 };
 
