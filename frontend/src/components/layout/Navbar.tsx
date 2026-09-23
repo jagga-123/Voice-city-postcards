@@ -11,7 +11,7 @@ export function Navbar() {
   const links = [
     { name: 'Home', href: '/' },
     { name: 'Explore', href: '/explore' },
-    { name: 'About', href: '/about' },
+    { name: 'About', href: '/#how-it-works' },
   ];
 
   return (
@@ -37,7 +37,7 @@ export function Navbar() {
                 </Link>
               ))}
               <Link
-                href="/postcard"
+                href="/explore"
                 className="relative inline-flex group"
               >
                 <div className="absolute transition-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-lg blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
@@ -81,7 +81,7 @@ export function Navbar() {
                 </Link>
               ))}
               <Link
-                href="/postcard"
+                href="/explore"
                 onClick={() => setIsOpen(false)}
                 className="block w-full text-center mt-4 px-6 py-3 text-base font-bold text-white bg-gradient-to-r from-pink-600 to-cyan-600 rounded-lg shadow-[0_0_15px_rgba(236,72,153,0.5)] uppercase tracking-wider"
               >

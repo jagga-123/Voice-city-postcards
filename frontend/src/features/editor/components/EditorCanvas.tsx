@@ -4,7 +4,7 @@ import type { RefObject } from 'react';
 import { useAppStore } from '@/store/useAppStore';
 // Dynamic import is used for the editor to prevent SSR issues with canvas/window
 import dynamic from 'next/dynamic';
-import type { ImageEditorRef } from '@unlayer/react-image-editor';
+import type { ImageEditorInstance, ImageEditorRef } from '@unlayer/react-image-editor';
 
 const ImageEditor = dynamic(() => import('@unlayer/react-image-editor'), { ssr: false });
 
@@ -13,15 +13,15 @@ const UNLAYER_PROJECT_ID = Number(process.env.NEXT_PUBLIC_UNLAYER_PROJECT_ID) ||
 
 interface EditorCanvasProps {
   editorRef: RefObject<ImageEditorRef | null>;
-  onLoadDraft: () => void;
+  onLoadDraft: (editor: ImageEditorInstance) => void;
 }
 
 export function EditorCanvas({ editorRef, onLoadDraft }: EditorCanvasProps) {
   const { selectedLocation, postcardTitle, postcardMessage } = useAppStore();
 
-  const handleEditorLoad = () => {
+  const handleEditorLoad = (editor: ImageEditorInstance) => {
     // Attempt to load draft first
-    onLoadDraft();
+    onLoadDraft(editor);
 
     // In a real integration, this is where we would use the editorRef to programmatically
     // inject the postcardTitle, postcardMessage, and background image (selectedLocation.image).

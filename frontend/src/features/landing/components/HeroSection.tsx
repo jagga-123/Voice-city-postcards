@@ -8,7 +8,7 @@ export function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Image & Overlays */}
       <div 
-        className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1601058091887-321ab171f114?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center"
+        className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/80 to-slate-950" />
       

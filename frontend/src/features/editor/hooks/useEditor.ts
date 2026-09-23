@@ -3,11 +3,11 @@ import { useAppStore } from '@/store/useAppStore';
 import { useCollectionStore } from '@/store/useCollectionStore';
 import { editorService } from '@/features/editor/services/editorService';
 import { useRouter } from 'next/navigation';
-import type { ImageEditorRef } from '@unlayer/react-image-editor';
+import type { ImageEditorInstance, ImageEditorRef } from '@unlayer/react-image-editor';
 
 export function useEditor() {
   const editorRef = useRef<ImageEditorRef | null>(null);
-  const { setExportedPostcard, setEditorDraft, editorDraft, postcardTitle, postcardMessage, selectedTheme, selectedLocation } = useAppStore();
+  const { setExportedPostcard, setEditorDraft, postcardTitle, postcardMessage, selectedTheme, selectedLocation } = useAppStore();
   const { savePostcard } = useCollectionStore();
   const router = useRouter();
 
@@ -25,6 +25,9 @@ export function useEditor() {
           theme: selectedTheme,
           imageUrl: dataUrl
         });
+        // The postcard is finished — drop its draft so it isn't restored next time.
+        editorService.clearDraft();
+        setEditorDraft(null);
         // Navigate to success
         router.push('/success');
       }
@@ -34,18 +37,21 @@ export function useEditor() {
   const saveDraft = () => {
     if (editorRef.current && editorRef.current.editor) {
       const dataUrl = editorRef.current.editor.getImage();
-      if (dataUrl) {
+      if (dataUrl && selectedLocation) {
         setEditorDraft(dataUrl);
-        editorService.saveDraft(dataUrl);
+        editorService.saveDraft(dataUrl, selectedLocation.id);
         console.log("Draft saved successfully.");
       }
     }
   };
 
-  const loadDraft = () => {
-    const draft = editorService.loadDraft() || editorDraft;
-    if (draft && editorRef.current && editorRef.current.editor) {
-      editorRef.current.editor.reset(draft);
+  // Called by the editor's onLoad with the live editor instance — the ref is
+  // not populated yet at that moment, so the instance is passed in directly.
+  const loadDraft = (editor: ImageEditorInstance) => {
+    if (!selectedLocation) return;
+    const draft = editorService.loadDraft(selectedLocation.id);
+    if (draft) {
+      editor.reset(draft);
       console.log("Draft loaded successfully.");
     }
   };
