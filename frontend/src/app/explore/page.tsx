@@ -36,7 +36,7 @@ export default function ExplorePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto"
           >
             Find the perfect backdrop for your next postcard. From sun-drenched beaches to neon-lit streets, the city is yours.
           </motion.p>
@@ -50,27 +50,30 @@ export default function ExplorePage() {
           {/* Search */}
           <div className="relative w-full md:w-96">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <Search className="h-5 w-5 text-slate-500" />
+              <Search className="h-5 w-5 text-slate-400" aria-hidden="true" />
             </div>
             <input
-              type="text"
+              type="search"
+              aria-label="Search locations"
               placeholder="Search locations..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 rounded-xl pl-11 pr-4 py-3 focus:outline-none focus:ring-2 focus:ring-pink-500/50 focus:border-pink-500/50 transition-all backdrop-blur-sm"
+              className="w-full bg-slate-900/80 border border-white/10 text-white placeholder-slate-400 rounded-xl pl-11 pr-4 py-3 focus:outline-none focus:ring-2 focus:ring-pink-500/50 focus:border-pink-500/50 transition-all backdrop-blur-sm"
             />
           </div>
 
           {/* Categories */}
-          <div className="flex overflow-x-auto w-full md:w-auto gap-2 pb-2 md:pb-0 hide-scrollbar">
+          <div role="group" aria-label="Filter by category" className="flex overflow-x-auto w-full md:w-auto gap-2 pb-2 md:pb-0 hide-scrollbar">
             {CATEGORIES.map((category) => (
               <button
                 key={category}
+                type="button"
+                aria-pressed={activeCategory === category}
                 onClick={() => setActiveCategory(category)}
                 className={`whitespace-nowrap px-5 py-2.5 rounded-xl font-bold text-sm transition-all ${
                   activeCategory === category 
                     ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-[0_0_15px_rgba(6,182,212,0.4)]' 
-                    : 'bg-slate-900 text-slate-400 border border-white/10 hover:bg-white/5 hover:text-white'
+                    : 'bg-slate-900 text-slate-300 border border-white/10 hover:bg-white/5 hover:text-white'
                 }`}
               >
                 {category}
@@ -78,6 +81,10 @@ export default function ExplorePage() {
             ))}
           </div>
         </div>
+
+        <p role="status" aria-live="polite" className="sr-only">
+          {filteredLocations.length} {filteredLocations.length === 1 ? 'location' : 'locations'} shown
+        </p>
 
         {/* Grid */}
         {filteredLocations.length > 0 ? (
@@ -89,9 +96,9 @@ export default function ExplorePage() {
         ) : (
           <div className="text-center py-24">
             <div className="inline-block p-6 rounded-full bg-slate-900 border border-white/10 mb-6">
-              <Search className="h-12 w-12 text-slate-600" />
+              <Search className="h-12 w-12 text-slate-400" aria-hidden="true" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">No locations found</h3>
+            <h2 className="text-2xl font-bold text-white mb-2">No locations found</h2>
             <p className="text-slate-400">Try adjusting your search or category filter.</p>
           </div>
         )}

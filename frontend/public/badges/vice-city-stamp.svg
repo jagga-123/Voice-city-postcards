@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 300 300" role="img" aria-label="Vice City official postmark stamp">
+  <defs>
+    <linearGradient id="vs-sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fde047"/>
+      <stop offset="0.55" stop-color="#fb923c"/>
+      <stop offset="1" stop-color="#ec4899"/>
+    </linearGradient>
+    <path id="vs-top" d="M 46,150 A 104,104 0 0 1 254,150"/>
+    <path id="vs-bottom" d="M 30,150 A 120,120 0 0 0 270,150"/>
+    <clipPath id="vs-inner"><circle cx="150" cy="150" r="88"/></clipPath>
+  </defs>
+
+  <circle cx="150" cy="150" r="146" fill="#0b1020" fill-opacity="0.66"/>
+  <circle cx="150" cy="150" r="140" fill="none" stroke="#ff4fa3" stroke-width="6"/>
+  <circle cx="150" cy="150" r="128" fill="none" stroke="#ff4fa3" stroke-width="1.6"/>
+  <circle cx="150" cy="150" r="94" fill="none" stroke="#22d3ee" stroke-width="2"/>
+
+  <text font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="19" letter-spacing="3.4" fill="#ffffff" text-anchor="middle">
+    <textPath href="#vs-top" xlink:href="#vs-top" startOffset="50%">VICE CITY POSTCARDS</textPath>
+  </text>
+  <text font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="17" letter-spacing="4" fill="#ffffff" text-anchor="middle">
+    <textPath href="#vs-bottom" xlink:href="#vs-bottom" startOffset="50%">OFFICIAL POSTMARK</textPath>
+  </text>
+
+  <!-- side stars -->
+  <polygon points="22,150 26,158 35,159 28,165 30,174 22,169 14,174 16,165 9,159 18,158" fill="#22d3ee" transform="translate(-2,-24) scale(1)"/>
+  <polygon points="278,150 282,158 291,159 284,165 286,174 278,169 270,174 272,165 265,159 274,158" fill="#22d3ee" transform="translate(-2,-24) scale(1)"/>
+
+  <g clip-path="url(#vs-inner)">
+    <rect x="62" y="62" width="176" height="176" fill="#12163a"/>
+    <circle cx="150" cy="150" r="42" fill="url(#vs-sun)"/>
+    <!-- sun scanlines -->
+    <rect x="100" y="150" width="100" height="3.5" fill="#12163a"/>
+    <rect x="100" y="160" width="100" height="5" fill="#12163a"/>
+    <rect x="100" y="171" width="100" height="6.5" fill="#12163a"/>
+    <!-- ground -->
+    <rect x="62" y="184" width="176" height="60" fill="#0b0b22"/>
+    <rect x="62" y="183" width="176" height="2" fill="#22d3ee"/>
+    <!-- palms -->
+    <path d="M104,184 C104,166 108,150 116,136" stroke="#05050f" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <g fill="#05050f">
+      <path d="M116,136 C104,126 92,128 86,136 C98,131 108,133 116,136 Z"/>
+      <path d="M116,136 C112,122 100,116 90,118 C102,120 110,126 116,136 Z"/>
+      <path d="M116,136 C122,122 134,118 142,122 C130,124 122,128 116,136 Z"/>
+      <path d="M116,136 C130,132 140,138 144,146 C134,140 124,138 116,136 Z"/>
+    </g>
+    <path d="M196,184 C196,170 192,158 186,148" stroke="#05050f" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <g fill="#05050f">
+      <path d="M186,148 C176,140 166,142 162,148 C172,145 180,146 186,148 Z"/>
+      <path d="M186,148 C184,136 174,132 166,134 C176,136 182,140 186,148 Z"/>
+      <path d="M186,148 C192,138 202,136 208,140 C198,141 192,144 186,148 Z"/>
+      <path d="M186,148 C198,148 206,154 208,161 C200,155 192,151 186,148 Z"/>
+    </g>
+  </g>
+
+  <text x="150" y="212" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="12" letter-spacing="5" fill="#ffffff">EST. 1986</text>
+
+  <!-- postmark cancel waves -->
+  <g fill="none" stroke="#ff4fa3" stroke-width="3.2" stroke-linecap="round" opacity="0.92">
+    <path d="M 70,110 q 20,-12 40,0 t 40,0 t 40,0 t 40,0"/>
+    <path d="M 70,127 q 20,-12 40,0 t 40,0 t 40,0 t 40,0" opacity="0"/>
+  </g>
+</svg>

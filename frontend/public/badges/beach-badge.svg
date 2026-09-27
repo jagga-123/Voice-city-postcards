@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 300 300" role="img" aria-label="Ocean Beach emblem badge">
+  <defs>
+    <linearGradient id="bb-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="0.6" stop-color="#f472b6"/>
+      <stop offset="1" stop-color="#fdba74"/>
+    </linearGradient>
+    <linearGradient id="bb-sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fef08a"/>
+      <stop offset="1" stop-color="#fb923c"/>
+    </linearGradient>
+    <path id="bb-top" d="M 44,150 A 106,106 0 0 1 256,150"/>
+    <path id="bb-bottom" d="M 30,150 A 120,120 0 0 0 270,150"/>
+    <clipPath id="bb-clip"><circle cx="150" cy="150" r="92"/></clipPath>
+  </defs>
+  <circle cx="150" cy="150" r="146" fill="#0b1020" fill-opacity="0.72"/>
+  <circle cx="150" cy="150" r="140" fill="none" stroke="#fb923c" stroke-width="6"/>
+  <circle cx="150" cy="150" r="98" fill="none" stroke="#ffffff" stroke-width="3"/>
+
+  <text font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="21" letter-spacing="4.5" fill="#fff7ed" text-anchor="middle">
+    <textPath href="#bb-top" xlink:href="#bb-top" startOffset="50%">OCEAN BEACH</textPath>
+  </text>
+  <text font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="16" letter-spacing="5" fill="#a5f3fc" text-anchor="middle">
+    <textPath href="#bb-bottom" xlink:href="#bb-bottom" startOffset="50%">VICE CITY · 1986</textPath>
+  </text>
+
+  <g clip-path="url(#bb-clip)">
+    <rect x="50" y="50" width="200" height="200" fill="url(#bb-sky)"/>
+    <circle cx="150" cy="168" r="40" fill="url(#bb-sun)"/>
+    <!-- waves -->
+    <path d="M40,176 q22,-14 44,0 t44,0 t44,0 t44,0 t44,0 V260 H40 Z" fill="#22d3ee"/>
+    <path d="M40,192 q22,-12 44,0 t44,0 t44,0 t44,0 t44,0 V260 H40 Z" fill="#0ea5e9"/>
+    <path d="M40,210 q22,-12 44,0 t44,0 t44,0 t44,0 t44,0 V260 H40 Z" fill="#0369a1"/>
+    <path d="M40,228 q22,-10 44,0 t44,0 t44,0 t44,0 t44,0 V260 H40 Z" fill="#0c4a6e"/>
+    <!-- palm -->
+    <path d="M206,200 C204,178 208,160 216,144" stroke="#0b1020" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <g fill="#0b1020">
+      <path d="M216,144 C204,134 190,136 184,144 C198,139 208,141 216,144 Z"/>
+      <path d="M216,144 C212,128 198,122 188,126 C202,127 210,134 216,144 Z"/>
+      <path d="M216,144 C224,130 238,128 246,134 C232,134 222,138 216,144 Z"/>
+      <path d="M216,144 C230,142 242,150 244,160 C234,152 224,147 216,144 Z"/>
+    </g>
+  </g>
+</svg>

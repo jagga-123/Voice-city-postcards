@@ -1,32 +1,18 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-
-const mockups = [
-  {
-    url: 'https://images.unsplash.com/photo-1771850081567-22d494c9aca8?q=80&w=800&auto=format&fit=crop',
-    title: 'Neon Nights'
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?q=80&w=800&auto=format&fit=crop',
-    title: 'Ocean Drive'
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1542359649-31e03cd4d909?q=80&w=800&auto=format&fit=crop',
-    title: 'Downtown Cruising'
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1506501139174-099022df5260?q=80&w=800&auto=format&fit=crop',
-    title: 'Sunset Palms'
-  }
-];
+import { ArrowRight } from 'lucide-react';
+import { SAMPLE_POSTCARDS } from '@/constants/samples';
+import { SamplePostcardCard } from '@/features/gallery/components/SamplePostcardCard';
 
 export function GallerySection() {
   return (
-    <section className="py-24 bg-slate-950">
+    <section aria-labelledby="gallery-preview-title" className="cv-auto py-24 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
+            id="gallery-preview-title"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -34,45 +20,43 @@ export function GallerySection() {
           >
             Gallery Preview
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto"
+            className="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto"
           >
-            Get inspired by community creations.
+            Sample postcards to get you inspired. Yours will be saved to your own gallery.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {mockups.map((img, index) => (
-            <motion.div
-              key={index}
+        <ul className="flex flex-wrap justify-center gap-8">
+          {SAMPLE_POSTCARDS.map((sample, index) => (
+            <motion.li
+              key={sample.id}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative aspect-video rounded-xl overflow-hidden cursor-pointer"
+              className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.4rem)]"
             >
-              {/* Image with Next.js Image component not strictly required for hackathon static un-configured domains, but good practice. Using regular img to avoid unconfigured host errors on Vercel unless added to next.config.ts */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img 
-                src={img.url} 
-                alt={img.title}
-                className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-700 ease-in-out"
+              <SamplePostcardCard
+                sample={sample}
+                sizes="(min-width: 1024px) 380px, (min-width: 640px) 46vw, 92vw"
               />
-              
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80" />
-              
-              <div className="absolute bottom-0 left-0 p-6 w-full transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <h3 className="text-2xl font-bold text-white drop-shadow-md">{img.title}</h3>
-              </div>
-
-              {/* Glowing Border effect on hover */}
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-pink-500/50 rounded-xl transition-colors duration-300" />
-            </motion.div>
+            </motion.li>
           ))}
+        </ul>
+
+        <div className="mt-14 text-center">
+          <Link
+            href="/explore"
+            className="group inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-lg font-bold text-white transition hover:bg-white/10"
+          >
+            Create yours
+            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </section>

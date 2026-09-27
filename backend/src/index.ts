@@ -12,7 +12,13 @@ dotenv.config();
 const app: Express = express();
 const PORT = process.env.PORT || 5000;
 
-// Comma-separated allowlist, e.g. "https://vice-city-postcards.vercel.app,http://localhost:3000".
+// Behind a reverse proxy (Render, Railway, ...) the real client IP arrives in X-Forwarded-For.
+// Without this, express-rate-limit would treat every visitor as the proxy's IP.
+if (process.env.NODE_ENV === 'production') {
+  app.set('trust proxy', 1);
+}
+
+// Comma-separated allowlist, e.g. "https://voice-city-postcards.vercel.app,http://localhost:3000".
 // Falls back to the local frontend dev origin so nothing breaks out of the box.
 const allowedOrigins = (process.env.CORS_ORIGIN || 'http://localhost:3000')
   .split(',')
@@ -40,6 +46,11 @@ app.use(limiter);
 
 // Routes
 app.use('/api/v1', routes);
+
+// Unknown routes get a JSON 404 instead of Express's default HTML page
+app.use((req, res) => {
+  res.status(404).json({ status: 'error', statusCode: 404, message: 'Route not found' });
+});
 
 // Global Error Handler
 app.use(errorHandler);

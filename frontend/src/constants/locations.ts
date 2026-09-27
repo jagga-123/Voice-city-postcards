@@ -6,7 +6,7 @@ export const LOCATIONS: Location[] = [
     name: 'Ocean Beach',
     category: 'Beach',
     description: 'Relax on the most beautiful coastline in Vice City with its pristine white sands and pastel art deco buildings.',
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop',
+    image: '/locations/ocean-beach.jpg',
     highlights: ['White sand beaches', 'Art Deco Architecture', 'Rollerbladers and sunbathers', 'Sunset views']
   },
   {
@@ -14,7 +14,7 @@ export const LOCATIONS: Location[] = [
     name: 'Vice Marina',
     category: 'Marina',
     description: 'Luxury yachts, sunsets, and waterfront adventures await at the most exclusive docking spot in the city.',
-    image: 'https://images.unsplash.com/photo-1534008897995-27a23e859048?q=80&w=800&auto=format&fit=crop',
+    image: '/locations/vice-marina.jpg',
     highlights: ['Mega-yachts', 'Exclusive waterfront dining', 'Speedboat tours', 'Neon reflections on water']
   },
   {
@@ -22,7 +22,7 @@ export const LOCATIONS: Location[] = [
     name: 'Neon District',
     category: 'Nightlife',
     description: 'Bright lights, music, and endless entertainment. The heart of Vice City\'s underground culture.',
-    image: 'https://images.unsplash.com/photo-1771850081567-22d494c9aca8?q=80&w=800&auto=format&fit=crop',
+    image: '/locations/neon-district.jpg',
     highlights: ['Cyberpunk aesthetic', 'Pulsing nightclubs', 'Street racing scene', 'Neon signage']
   },
   {
@@ -30,7 +30,7 @@ export const LOCATIONS: Location[] = [
     name: 'Palm Island',
     category: 'Island',
     description: 'Escape to a tropical paradise surrounded by crystal waters and exclusive celebrity mansions.',
-    image: 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?q=80&w=800&auto=format&fit=crop',
+    image: '/locations/palm-island.jpg',
     highlights: ['Private estates', 'Lush palm trees', 'Golf courses', 'Infinity pools']
   },
   {
@@ -38,7 +38,7 @@ export const LOCATIONS: Location[] = [
     name: 'Downtown Vice',
     category: 'City Center',
     description: 'Skyscrapers, business districts, and urban energy driving the economy of the sun-drenched metropolis.',
-    image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=800&auto=format&fit=crop',
+    image: '/locations/downtown-vice.jpg',
     highlights: ['Towering skyscrapers', 'Corporate headquarters', 'Helipads', 'Busy elevated trains']
   },
   {
@@ -46,7 +46,7 @@ export const LOCATIONS: Location[] = [
     name: 'Starfish Island',
     category: 'Island',
     description: 'The most exclusive neighborhood in Vice City, featuring sprawling estates and ultimate privacy.',
-    image: 'https://images.unsplash.com/photo-1506501139174-099022df5260?q=80&w=800&auto=format&fit=crop',
+    image: '/locations/starfish-island.jpg',
     highlights: ['Gated communities', 'Oceanfront villas', 'Exotic sports cars', 'Ultimate luxury']
   }
 ];

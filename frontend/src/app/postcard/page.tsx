@@ -25,8 +25,8 @@ export default function PostcardPage() {
   return (
     <div className="min-h-screen bg-slate-950 pt-24 pb-24 relative overflow-hidden">
       {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-pink-500/5 blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-500/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-pink-500/5 blur-[150px] rounded-full pointer-events-none" aria-hidden="true" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-500/5 blur-[120px] rounded-full pointer-events-none" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -40,7 +40,7 @@ export default function PostcardPage() {
             >
               Postcard Generator
             </motion.h1>
-            <p className="text-slate-400">Personalize your memory of {selectedLocation.name}.</p>
+            <p className="text-slate-300">Personalize your memory of {selectedLocation.name}.</p>
           </div>
         </div>
 
@@ -68,14 +68,16 @@ export default function PostcardPage() {
             {/* CTA Section */}
             <div className="mt-auto space-y-4 pt-4">
               <button
+                type="button"
                 onClick={() => router.push('/editor')}
-                className="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-bold rounded-xl shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+                className="w-full py-4 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold rounded-xl shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all transform hover:scale-105 flex items-center justify-center gap-2"
               >
                 <Edit3 className="w-5 h-5" />
                 Customize with Image Editor
               </button>
               
               <button
+                type="button"
                 onClick={() => router.push('/explore')}
                 className="w-full py-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl border border-white/10 transition-colors flex items-center justify-center gap-2"
               >
@@ -93,7 +95,7 @@ export default function PostcardPage() {
             className="lg:col-span-8 bg-slate-900/30 border border-white/5 rounded-3xl p-4 sm:p-8 flex items-center justify-center relative overflow-hidden"
           >
             {/* Grid pattern background for preview area */}
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]" />
+            <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.9)_1px,transparent_1px)] bg-[length:22px_22px] opacity-[0.04]" aria-hidden="true" />
             <PostcardPreview />
           </motion.div>
 

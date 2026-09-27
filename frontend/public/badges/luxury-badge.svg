@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 300 300" role="img" aria-label="VIP luxury seal badge">
+  <defs>
+    <linearGradient id="lb-gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fef3c7"/>
+      <stop offset="0.35" stop-color="#facc15"/>
+      <stop offset="0.7" stop-color="#ca8a04"/>
+      <stop offset="1" stop-color="#fde68a"/>
+    </linearGradient>
+    <linearGradient id="lb-gold-text" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff7d6"/>
+      <stop offset="1" stop-color="#eab308"/>
+    </linearGradient>
+    <path id="lb-top" d="M 50,150 A 100,100 0 0 1 250,150"/>
+    <path id="lb-bottom" d="M 40,150 A 110,110 0 0 0 260,150"/>
+  </defs>
+  <polygon points="150.0,4.0 165.0,16.8 182.5,7.7 194.3,23.5 213.3,18.5 221.3,36.5 241.0,35.9 244.8,55.2 264.1,59.0 263.5,78.7 281.5,86.7 276.5,105.7 292.3,117.5 283.2,135.0 296.0,150.0 283.2,165.0 292.3,182.5 276.5,194.3 281.5,213.3 263.5,221.3 264.1,241.0 244.8,244.8 241.0,264.1 221.3,263.5 213.3,281.5 194.3,276.5 182.5,292.3 165.0,283.2 150.0,296.0 135.0,283.2 117.5,292.3 105.7,276.5 86.7,281.5 78.7,263.5 59.0,264.1 55.2,244.8 35.9,241.0 36.5,221.3 18.5,213.3 23.5,194.3 7.7,182.5 16.8,165.0 4.0,150.0 16.8,135.0 7.7,117.5 23.5,105.7 18.5,86.7 36.5,78.7 35.9,59.0 55.2,55.2 59.0,35.9 78.7,36.5 86.7,18.5 105.7,23.5 117.5,7.7 135.0,16.8" fill="url(#lb-gold)" stroke="#78350f" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="150" cy="150" r="122" fill="none" stroke="#78350f" stroke-width="2.5"/>
+  <circle cx="150" cy="150" r="116" fill="#0b0b10"/>
+  <circle cx="150" cy="150" r="116" fill="none" stroke="url(#lb-gold)" stroke-width="3"/>
+  <circle cx="150" cy="150" r="74" fill="none" stroke="url(#lb-gold)" stroke-width="1.5"/>
+  <text font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="19" letter-spacing="5" fill="url(#lb-gold-text)" text-anchor="middle">
+    <textPath href="#lb-top" xlink:href="#lb-top" startOffset="50%">LUXURY ESCAPE</textPath>
+  </text>
+  <text font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="17" letter-spacing="5" fill="url(#lb-gold-text)" text-anchor="middle">
+    <textPath href="#lb-bottom" xlink:href="#lb-bottom" startOffset="50%">VICE CITY · EST. 1986</textPath>
+  </text>
+  <text x="150" y="176" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="78" letter-spacing="4" fill="url(#lb-gold-text)">VIP</text>
+  <polygon points="150,112 154,122 165,123 157,130 159,141 150,135 141,141 143,130 135,123 146,122" fill="url(#lb-gold)" transform="translate(0,-4)"/>
+</svg>

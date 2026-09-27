@@ -10,6 +10,49 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Motion utilities used across the app (animate-shimmer, animate-tilt, ...) */
+  --animate-shimmer: shimmer 1.6s ease-in-out infinite;
+  --animate-tilt: tilt 10s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  /* "backwards" so it never overrides Framer Motion hover transforms once finished */
+  --animate-enter: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  --animate-float: float 5s ease-in-out infinite;
+  --animate-gradient-pan: gradient-pan 6s ease-in-out infinite;
+  /* Hero's ambient glow orbs — CSS instead of Framer Motion, since they're the
+     first thing to hydrate and run on every landing (compositor-only, no JS). */
+  --animate-glow-a: glow-a 8s ease-in-out infinite;
+  --animate-glow-b: glow-b 10s ease-in-out infinite 1s;
+
+  @keyframes shimmer {
+    100% { transform: translateX(100%); }
+  }
+  @keyframes tilt {
+    0%, 50%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(0.5deg); }
+    75% { transform: rotate(-0.5deg); }
+  }
+  /* Runs from the first paint with CSS only, so above-the-fold text never waits for JavaScript */
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  @keyframes gradient-pan {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  @keyframes glow-a {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.2); opacity: 0.5; }
+  }
+  @keyframes glow-b {
+    0%, 100% { transform: scale(1); opacity: 0.2; }
+    50% { transform: scale(1.3); opacity: 0.4; }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +62,47 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Visible keyboard focus everywhere (mouse users don't see it) */
+:focus-visible {
+  outline: 2px solid #22d3ee;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Below-the-fold sections skip style/layout work until they are near the viewport */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Respect the OS "reduce motion" setting for every CSS animation and transition */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

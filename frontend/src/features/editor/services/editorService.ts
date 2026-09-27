@@ -18,13 +18,16 @@ function isStoredDraft(value: unknown): value is StoredDraft {
 let memoryDraft: StoredDraft | null = null;
 
 export const editorService = {
-  saveDraft: (image: string, locationId: string) => {
+  /** Returns true when the draft reached localStorage (it is always kept in memory too). */
+  saveDraft: (image: string, locationId: string): boolean => {
     const draft: StoredDraft = { locationId, image };
     memoryDraft = draft;
     try {
       localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
+      return true;
     } catch (e) {
-      console.error('Failed to save draft', e);
+      console.warn('Draft kept in memory only (browser storage is full)', e);
+      return false;
     }
   },
 

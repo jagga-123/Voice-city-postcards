@@ -16,7 +16,7 @@ export function PostcardStats() {
           <MapPin className="w-5 h-5 text-cyan-400" />
         </div>
         <div>
-          <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Location</p>
+          <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Location</p>
           <p className="text-sm font-bold text-white truncate max-w-[100px]">{selectedLocation?.name || 'None'}</p>
         </div>
       </div>
@@ -26,7 +26,7 @@ export function PostcardStats() {
           <Palette className="w-5 h-5 text-pink-400" />
         </div>
         <div>
-          <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Theme</p>
+          <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Theme</p>
           <p className="text-sm font-bold text-white">{selectedTheme}</p>
         </div>
       </div>
@@ -36,7 +36,7 @@ export function PostcardStats() {
           <Type className="w-5 h-5 text-purple-400" />
         </div>
         <div>
-          <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Characters</p>
+          <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Characters</p>
           <p className="text-sm font-bold text-white">{charCount} / 190</p>
         </div>
       </div>
@@ -46,7 +46,7 @@ export function PostcardStats() {
           <CheckCircle className={`w-5 h-5 ${isComplete ? 'text-emerald-400' : 'text-orange-400'}`} />
         </div>
         <div>
-          <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Status</p>
+          <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Status</p>
           <p className="text-sm font-bold text-white">{isComplete ? 'Ready' : 'Draft'}</p>
         </div>
       </div>
