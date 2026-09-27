@@ -102,32 +102,18 @@ The frontend follows a feature-based structure (`src/features/*`); the backend i
 Express service (see the note below the diagram).
 
 ```mermaid
-flowchart TD
-    subgraph Browser["Browser — Next.js 16 App Router"]
-        Landing["/ — Landing<br/>Hero · Story · Demo"]
-        Explore["/explore — Location grid"]
-        Postcard["/postcard — Theme + message"]
-        EditorPage["/editor — Vice Studio"]
-        Success["/success"]
-        Gallery["/gallery"]
-    end
-
-    AppStore[["useAppStore<br/>in-memory"]]
-    CollectionStore[["useCollectionStore<br/>localStorage, quota-safe"]]
-    Compose["lib/composePostcard<br/>canvas: title + message"]
-    Stamp["lib/stampBadge<br/>canvas: badge stamping"]
-    Unlayer(["@unlayer/react-image-editor<br/>cdn.unlayer.com / api.unlayer.com"])
-
-    Explore -- select location --> AppStore
-    Postcard -- theme, title, message --> AppStore
-    AppStore --> Compose --> EditorPage
-    EditorPage <--> Unlayer
-    EditorPage -- stamp badge --> Stamp --> EditorPage
-    EditorPage -- export PNG --> CollectionStore --> Gallery
-    EditorPage --> Success --> Gallery
-
-    Backend[("Express + TypeScript backend<br/>health check only, not yet called by the app")]
-    Browser -. future cloud sync .-> Backend
+flowchart LR
+    Explore["/explore"] --> AppStore[["useAppStore<br/>in-memory"]]
+    Postcard["/postcard"] --> AppStore
+    AppStore --> Compose["lib/composePostcard<br/>canvas: title + message"]
+    Compose --> EditorPage["/editor — Vice Studio"]
+    EditorPage --> Unlayer(["Unlayer React<br/>Image Editor"])
+    EditorPage --> Stamp["lib/stampBadge<br/>canvas: badge stamping"]
+    EditorPage --> Success["/success"]
+    EditorPage --> CollectionStore[["useCollectionStore<br/>localStorage, quota-safe"]]
+    Success --> Gallery["/gallery"]
+    CollectionStore --> Gallery
+    Gallery -.-> Backend[("Express backend<br/>health check only, not yet called")]
 ```
 
 - `src/features/landing` — Hero, the "Create Your Vice City Story" section, the "See It In Action" demo player, feature showcase and gallery preview.
